@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Configuration file of the logger of Quby DryClean project -->
+<!-- Author: Mohamed Tleis -->
+<!--<!DOCTYPE log4j:configuration PUBLIC-->
+  <!--"-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">-->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration debug="false">
+
+    <appender name="default.console" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.out" />
+        <param name="threshold" value="debug" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="log.file" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="log/log.log" />
+        <param name="MaxFileSize" value="2MB" />
+        <param name="append" value="true" />
+        <param name="threshold" value="debug" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
+        </layout>
+    </appender>
+   
+    <logger name="quby.dryclean.QubyDryClean" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="log.file" />
+        <!-- <appender-ref ref="default.console" /> -->
+    </logger>
+    
+    <logger name="quby.dryclean.BusinessHourCalculator" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="log.file" />
+        <!--    <appender-ref ref="default.console" /> -->
+    </logger>
+   
+    <root>
+        <priority value="info" />
+       <!-- <appender-ref ref="default.console" /> -->
+        <appender-ref ref="log.file" />
+    </root>
+</log4j:configuration>

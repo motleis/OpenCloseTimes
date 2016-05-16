@@ -1,0 +1,28 @@
+---------------------
+1. Application
+---------------------
+All details of the application requirements in pdf file.
+
+* A Java program that will determine the guaranteed time given a business hour schedule. 
+* You must at least create a class called BusinessHourCalculator that allows one to define the opening and closing time for each day. 
+* By default the store is in business 7 days a week. 
+* Assuming no additional requirements such as time zones and daylight savings
+ */
+
+
+---------------------
+2. Classes
+---------------------
+BussinessHourCalculator
+OpenCloseTimes
+QubyDryClean
+
+-------------
+3. Used Techs
+-------------
+- JDK-1.8 new DateTime API
+- HashTables
+- Log4J
+
+
+
